@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React-Day-01</title>
+
+    <style>
+        body{
+            background-color: yellowgreen;
+        }
+        h2{
+            color: rgb(241, 21, 62);
+        }
+        pre{
+            font-size: 1.5em;
+        }
+        p{
+            color: green;
+            font-weight: bold;
+        }
+       
+    </style>
+</head>
+<body >
+    <h2>1. What is Virtual DOM</h2>
+        <p>The Virtual DOM (VDOM) is an in-memory representation of Real DOM. The representation of a UI is kept in memory and synced with the "real" DOM. It's a step that happens between the render function being called and the displaying of elements on the screen. This entire process is called reconciliation. (or) DOM is a document object model, created by converting HTML CSS and JS Real DOM, which is an object which gets created whenever any React application gets loaded on the screen for the first time., whenever React components gets mounted on the screen for the first time. Now when any user makes any changes on the screen like button click because of which the state variable will get updated so in this case the changes will not directly go to Real DOM , instead in react we have concept known Virtual DOM. So we are having two virtual doms, one virtual dom gets created at the time of mounting of react component so it is a copy of your real dom. Another virtual dom is the dom which contains the new changes, updated state variables values. Now these two virtual doms will get compared with each other and will check for the new changes. this complete procedure is known as diffing algorithm. Now the new changes will be updated in your Real dom. this procedure is known as Recoinciliation.
+    </p> <br>
+
+    <h2>2. What is SPA</h2>
+        <h3>Single page application :- </h3> <p>Any web application , in which when you are clicking on any button or selecting option from navigation bar then if your page which means browser page is reloading then that means that application is your multi - page application . If it does not reload the browser page and just only updates the page without reloading then that application is known as Single Page application. When you create React application using CRA, (create-react-app boilerplate , developed by Facebook) it always create the application which will be Single page application.
+    </p>
+
+    <h2>3. What is difference between class and functional component</h2>
+    <h3>Functional Components :-</h3>
+     <li>
+        A functional component is just a plain JavaScript function that accepts props as an argument and returns a React element.
+     </li>
+     <li>There is no render method used in functional components.</li>
+     <li>Also known as Stateless components as they simply accept data and display them in some form, that they are mainly responsible for rendering UI.</li>
+     <li>React lifecycle methods (for example, componentDidMount) cannot be used in functional components.</li>
+     <li>Hooks can be easily used in functional components to make them Stateful. example: const [name,SetName]= React.useState(" ")</li>
+     <li>Constructors are not used.
+     </li>
+
+    </p>
+    <h3>Class Component :-</h3>
+        <li>A class component requires you to extend from React. Component and create a render function which returns a React element.</li>
+        <li>It must have the render() method returning JSX (which is syntactically similar to HTML)</li>
+        <li>Also known as Stateful components because they implement logic and state.</li>
+        <li>React lifecycle methods can be used inside class components (for example componentDidMount).</li>
+        <li>It requires different syntax inside a class component to implement hooks. example: constructor(props) { super(props); this.state = {name: ‘ ‘} }</li>
+        <li>Constructor are used as it needs to store state.</li>
+    </p>
+
+    <h2>4. What does mean by state and its use in react?</h2>
+        State of a component is an object that holds some information that may change over the lifetime of the component. We should always try to make our state as simple as possible and minimize the number of stateful components.
+
+        <pre>  
+            <code>
+                class MyName extends React.Component {
+                    constructor() {
+                      super(); 
+                      this.state = {
+                        name: 'Deepak kumar'
+                      }
+                    }
+                    render() {
+                      return <span>Hello, my name is { this.state.name }</span>;
+                    }
+                }
+            </code>
+        </pre>
+          <p>State is similar to props, but it is private and fully controlled by the component ,i.e., it is not accessible to any other component till the owner component decides to pass it.</p>
+    </p>
+    
+    <h2>5. What is JSX and why do we use it instead of js?</h2>
+        <p>JSX is a XML-like syntax extension to ECMAScript (the acronym stands for JavaScript XML). Basically it just provides syntactic sugar for the React.createElement() function, giving us expressiveness of JavaScript along with HTML like template syntax. In the example below text inside
+
+    </p>
+    <h2>6. What is package.json</h2>
+        <p>The package. json file is the heart of any Node project. It records important metadata about a project which is required before publishing to NPM, and also defines functional attributes of a project that npm uses to install dependencies, run scripts, and identify the entry point to our package
+    </p>
+    
+</body>
+</html>
